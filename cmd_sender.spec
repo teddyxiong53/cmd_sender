@@ -35,4 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['C:\\work\\github\\cmd_sender\\cmd_sender.ico'],
 )

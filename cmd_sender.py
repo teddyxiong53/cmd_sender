@@ -1101,11 +1101,13 @@ class CmdSenderApp(tk.Tk):
         self.geometry("900x650")
         self.minsize(600, 400)
 
-        # 设置图标（如果有）
-        try:
-            self.iconbitmap(default="")
-        except Exception:
-            pass
+        # 设置程序图标
+        icon_path = os.path.join(os.path.dirname(__file__), "cmd_sender.ico")
+        if os.path.exists(icon_path):
+            try:
+                self.iconbitmap(default=icon_path)
+            except Exception:
+                pass
 
         # 核心组件
         self.target_window = TargetWindow()

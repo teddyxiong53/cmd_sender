@@ -54,7 +54,7 @@ if not exist "%SCRIPT_NAME%" (
 echo.
 echo [2/3] Building EXE (this may take a few minutes)...
 echo.
-pyinstaller --onefile --windowed --name cmd_sender --clean "%SCRIPT_NAME%"
+pyinstaller --onefile --windowed --icon "%SCRIPT_DIR%cmd_sender.ico" --name cmd_sender --clean "%SCRIPT_NAME%"
 if %ERRORLEVEL% NEQ 0 (
     echo [ERROR] Build failed. Check errors above.
     pause
