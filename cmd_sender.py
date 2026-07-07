@@ -1554,7 +1554,10 @@ class GlobalMouseTracker:
     def uninstall(self):
         """卸载"""
         if self._binding_id:
-            self.app.unbind_all("<ButtonRelease-1>")
+            try:
+                self.app.unbind_all("<ButtonRelease-1>")
+            except tk.TclError:
+                pass  # 窗口已销毁，忽略
 
 
 # ============================================================================
